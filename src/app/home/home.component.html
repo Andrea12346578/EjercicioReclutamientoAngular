@@ -1,0 +1,30 @@
+<div class="container">
+  <form [formGroup]="form">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title translate>Calculadora de multiplos</mat-card-title>
+        <mat-card-subtitle>
+          <app-loader [isLoading]="isLoading" [size]="1.5"></app-loader>
+          <mat-form-field class="example-full-width" [hidden]="isLoading">
+            <mat-label>Ingresa un numero</mat-label>
+            <input matInput type="number" placeholder="Ex. 21" min="1" formControlName="numero" />
+          </mat-form-field>
+          <h2 *ngIf="form.value.resultado != ''" style="color: {{ this.form.value.color }}">
+            {{ form.value.resultado }}
+          </h2>
+        </mat-card-subtitle>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button
+          mat-raised-button
+          color="primary"
+          translate
+          (click)="calculate()"
+          [disabled]="this.form.value.numero == null ? true : null"
+        >
+          Calcular
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

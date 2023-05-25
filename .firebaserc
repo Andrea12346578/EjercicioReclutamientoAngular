@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ejercicio-angular-b12d6": {
+      "hosting": {
+        "multiplos-357": [
+          "ejercicio-angular-b12d6"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ejercicio-angular-b12d6"
+  }
+}
