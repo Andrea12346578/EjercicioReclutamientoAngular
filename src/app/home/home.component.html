@@ -2,14 +2,14 @@
   <form [formGroup]="form">
     <mat-card>
       <mat-card-content>
-        <mat-card-title translate>Calculadora de multiplos</mat-card-title>
+        <mat-card-title translate>tittle</mat-card-title><br />
         <mat-card-subtitle>
-          <app-loader [isLoading]="isLoading" [size]="1.5"></app-loader>
+          <app-loader [size]="1.5"></app-loader>
           <mat-form-field class="example-full-width" [hidden]="isLoading">
-            <mat-label>Ingresa un numero</mat-label>
+            <mat-label translate>instruction</mat-label>
             <input matInput type="number" placeholder="Ex. 21" min="1" formControlName="numero" />
           </mat-form-field>
-          <h2 *ngIf="form.value.resultado != ''" style="color: {{ this.form.value.color }}">
+          <h2 translate *ngIf="form.value.resultado != ''" [ngStyle]="{ color: form.value.color }">
             {{ form.value.resultado }}
           </h2>
         </mat-card-subtitle>
@@ -18,11 +18,10 @@
         <button
           mat-raised-button
           color="primary"
-          translate
           (click)="calculate()"
           [disabled]="this.form.value.numero == null ? true : null"
         >
-          Calcular
+          <span translate>calculate</span>
         </button>
       </mat-card-actions>
     </mat-card>

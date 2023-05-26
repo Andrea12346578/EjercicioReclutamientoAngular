@@ -25,7 +25,8 @@
       "@shared/*": ["src/app/@shared/*"],
       "@env/*": ["src/environments/*"],
       "tslib": ["path/to/node_modules/tslib/tslib.d.ts"]
-    }
+    },
+    "types": ["node"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

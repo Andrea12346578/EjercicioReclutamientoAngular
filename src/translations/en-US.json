@@ -1,7 +1,10 @@
 {
   "APP_NAME": "Multiplos357",
   "About": "About",
-  "Hello world !": "Hello world !",
   "Home": "Home",
-  "Version": "Version"
+  "Version": "Version",
+  "tittle": "Multiples calculator",
+  "instruction": "Enter a number",
+  "calculate": "Calculate",
+  "notFound": "The number entered is not a multiple of 3, 5 or 7"
 }

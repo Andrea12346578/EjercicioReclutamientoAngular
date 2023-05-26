@@ -1,7 +1,10 @@
 {
   "APP_NAME": "Multiplos357",
   "About": "Acerca de",
-  "Hello world !": "¡Hola Mundo!",
   "Home": "Inicio",
-  "Version": "Versión"
+  "Version": "Versión",
+  "tittle": "Calculadora de múltiplos",
+  "instruction": "Ingresa un número",
+  "calculate": "Calcular",
+  "notFound": "El numero ingresado no es múltiplo de 3, 5 o 7"
 }
