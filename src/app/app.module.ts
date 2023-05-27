@@ -8,7 +8,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 
-import { environment } from '@env/environment';
 import { RouteReusableStrategy, ApiPrefixInterceptor, ErrorHandlerInterceptor, SharedModule } from '@shared';
 import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
@@ -17,6 +16,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
