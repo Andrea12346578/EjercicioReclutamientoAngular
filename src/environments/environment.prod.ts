@@ -12,4 +12,14 @@ export const environment = {
   serverUrl: 'https://api.chucknorris.io',
   defaultLanguage: 'en-US',
   supportedLanguages: ['en-US', 'es-ES'],
+  firebase: {
+    apiKey: 'AIzaSyC4vQ9zBhFMQsO79Z7cg3TQXobyb8p1sk8',
+    authDomain: 'ejercicio-angular-b12d6.firebaseapp.com',
+    databaseURL: 'https://ejercicio-angular-b12d6-default-rtdb.firebaseio.com',
+    projectId: 'ejercicio-angular-b12d6',
+    storageBucket: 'ejercicio-angular-b12d6.appspot.com',
+    messagingSenderId: '399788064305',
+    appId: '1:399788064305:web:e2446278424819f6685f10',
+    measurementId: 'G-EX1XSZX3BP',
+  },
 };
