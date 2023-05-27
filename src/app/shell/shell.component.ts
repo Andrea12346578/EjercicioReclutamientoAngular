@@ -24,6 +24,6 @@ export class ShellComponent implements OnInit {
         filter(({ matches }) => !matches),
         untilDestroyed(this)
       )
-      .subscribe(() => this.sidenav.close());
+      .subscribe(() => this.sidenav?.close());
   }
 }

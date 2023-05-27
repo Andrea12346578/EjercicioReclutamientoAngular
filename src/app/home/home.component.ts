@@ -13,25 +13,34 @@ export class HomeComponent implements OnInit {
   quote: string | undefined;
   isLoading = false;
 
-  constructor(
-    private quoteService: QuoteService,
-    private formBuilder: FormBuilder,
-    private DBsERVICE: DataBaseService
-  ) {}
+  constructor(private formBuilder: FormBuilder, private DBsERVICE: DataBaseService) {}
+
+  /* Se crea un form builder para guardar el numero ingresado por el usuario,
+   el resultado de la operación  y el color asignado dependiendo del resultado*/
 
   form = this.formBuilder.group({
     numero: [1],
     resultado: [''],
     color: [''],
   });
+
   ngOnInit() {}
 
+  /* Funion donde se calculan los multiplos de 3,5 o 7 */
   calculate() {
+    /* Se declaran las variables para referenciar al numero ingresado por el usuario (n) y
+    otra para guardar el multiplo obtenido (multiplo)  */
     let n = Number(this.form.value.numero),
       multiplo = 0;
+
+    /* La función comparar ayuda a ordenar mejor un arreglo  */
     function comparar(a: any, b: any) {
       return Number(a) - Number(b);
     }
+
+    /* Conjunto de condicionales donde se obtiene el modulo del numero ingresado por el usuario y se
+    verifica que sea 0 para obtener el multiplo correspondiente */
+
     if (n % 3 == 0) {
       this.form.controls['color'].setValue('#70AD47');
       multiplo = 3;
@@ -46,18 +55,24 @@ export class HomeComponent implements OnInit {
       multiplo = 0;
     }
 
+    /* Dependiendo del multiplo se asigna un valor al formControl resultado, si es 0 no se encontró multiplo y si es 3,5 o 7 se asigna el formato [3 y 15] */
+
     if (multiplo == 0) {
+      this.form.controls['resultado'].setValue('notFound');
     } else {
       this.form.controls['resultado'].setValue(
         '[' + [multiplo, Math.round(n / multiplo)].toString().split(',').sort(comparar).join(' y ') + ']'
       );
     }
 
+    /* Se genera el json apartir del formulario reactivo */
     const transaccion = {
       multiplo: multiplo,
       resultado: this.form.value.resultado,
       solicitud: this.form.value.numero,
     };
-    console.log('dataa -->', this.DBsERVICE.setTransaction(transaccion));
+
+    /* Se envía el json al servicio  DataBaseService para ser guardado un nuevo registro en la BD */
+    this.DBsERVICE.setTransaction(transaccion);
   }
 }

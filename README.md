@@ -1,3 +1,7 @@
+# NOTAS IMPORTANTES
+
+El componente principal es HomeComponent (EjercicioReclutamientoAngular\src\app\home) y el servicio que guarda los datos en la BD es DataBaseService (EjercicioReclutamientoAngular\src\app\services).
+
 # Multiplos357
 
 This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
